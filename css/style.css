@@ -15,15 +15,24 @@ body {
 
 header {
     display: flex;
-    align-items: center;
     height: 80px;
     background-color: #06131f;
 }
 
 main {
     height: calc(100vh - 80px);
+    overflow: auto;
     color: #ffffff;
     background-color: #1d2d3c;
+}
+
+.btn {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: #1ab26b;
 }
 
 .container {
@@ -32,11 +41,19 @@ main {
     flex-wrap: wrap;
     width: 50%;
     margin: 0 auto;
-    padding-top: 30px;
+}
+
+header .container {
+    align-items: center;
+}
+
+main .container {
+    padding-top: 25px;
 }
 
 .card {
     cursor: pointer;
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -50,7 +67,37 @@ main {
 header img {
     cursor: pointer;
     width: 100px;
-    margin-left: 100px;
+}
+
+.new-disk {
+    background-color: #112030;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 20px 45px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.new-disk input {
+    width: 80%;
+    height: 25px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+.fa-trash {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
 }
 
 .card img {
@@ -71,4 +118,12 @@ header img {
 .card:hover {
     background-color: #06131f;
     scale: 1.05;
+}
+
+.card:hover .fa-trash {
+    visibility: visible;
+}
+
+.fa-trash:hover {
+    color: crimson;
 }
